@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize");
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY
+  DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL //AQUI ES DONDE ESTÁ DEFINIDA LA VARIABLE DE ENTORNO DE DATABASE_URL 
 } = process.env;
 
 
@@ -13,7 +13,7 @@ const {
 //   native: false, 
 // });
 
-const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(DATABASE_URL, {
   logging: false, 
   native: false, 
 });
